@@ -1,0 +1,141 @@
+:root {
+  /* Paleta Boutique */
+  --primary: #A89082;       /* Marrom Nude Chique */
+  --primary-hover: #8f7a6e;
+  --bg-page: #F9FAFB;       /* Cinza quase branco (fundo) */
+  --bg-card: #FFFFFF;       /* Branco puro */
+  --text-main: #1F2937;     /* Cinza escuro (quase preto) */
+  --text-muted: #6B7280;    /* Cinza médio (textos secundários) */
+  --border: #E5E7EB;        /* Borda bem fininha */
+  --danger: #EF4444;        /* Vermelho para deletar */
+  --success: #10B981;       /* Verde */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Componentes Visuais (Imitando o Design Novo) --- */
+
+/* Cards (Caixinhas brancas) */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.card-header { padding: 20px; border-bottom: 1px solid var(--border); }
+.card-body { padding: 20px; }
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: 0.2s;
+  gap: 8px;
+}
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-ghost { background: transparent; color: var(--text-muted); }
+.btn-ghost:hover { background: #F3F4F6; color: var(--text-main); }
+.btn-icon { padding: 8px; border-radius: 6px; }
+
+/* Inputs (Campos de texto) */
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.input:focus { border-color: var(--primary); r: 2px solid var(--primary); }
+
+/* Tabelas (Listas) */
+.table-container { width: 100%; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
+th { 
+  padding: 12px 16px; 
+  color: var(--text-muted); 
+  font-weight: 500; 
+  border-bottom: 1px solid var(--border); 
+}
+td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--text-main); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background-color: #F9FAFB; }
+
+/* Layout Geral */
+.layout-container { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 260px;
+  background: white;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  left: 0; top: 0;
+}
+.main-content {
+  margin-left: 260px;
+  flex: 1;
+  padding: 32px;
+}
+
+/* Badge (Etiquetas de estoque) */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.badge-success { background: #D1FAE5; color: #065F46; } /* Verde */
+.badge-danger { background: #FEE2E2; color: #991B1B; }  /* Vermelho */
+/* --- Ajustes da Tela de Vendas --- */
+
+.vendas-container {
+  display: flex;
+  flex-direction: column-reverse; /* No celular: Produtos embaixo, Carrinho em cima */
+  gap: 20px;
+}
+
+/* O Carrinho no celular */
+.cart-card {
+  width: 100%;
+  background: var(--bg-card);
+  z-index: 50; /* Garante que fique acima se precisar */
+  /* No celular ele NÃO deve ser sticky para não atrapalhar a rolagem */
+  position: relative; 
+}
+
+/* Regras APENAS para Computador (Telas maiores que 768px) */
+@media (min-width: 768px) {
+  .vendas-container {
+    flex-direction: row; /* Lado a lado */
+    align-items: flex-start; /* Alinha no topo */
+  }
+
+  .cart-card {
+    max-width: 400px;
+    position: sticky; /* Agora sim, sticky */
+    top: 20px; /* Grudado no topo */
+  }
+}
