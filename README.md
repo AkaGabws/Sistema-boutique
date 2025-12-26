@@ -5,7 +5,18 @@
 ![Vite](https://img.shields.io/badge/Vite-5-purple)
 ![Supabase](https://img.shields.io/badge/Supabase-Database-green)
 
-Um sistema completo de PDV (Ponto de Venda) e gestão de estoque desenvolvido para pequenas boutiques de roupa. O projeto visa substituir planilhas manuais por um controle digital eficiente, com relatórios financeiros em tempo real.
+## 💡 Sobre o Projeto
+
+O **Boutique Admin** nasceu da necessidade de substituir planilhas manuais e cadernos de anotação por uma solução digital eficiente e acessível para pequenas lojas de roupa.
+
+O objetivo principal foi criar uma interface **intuitiva**, onde vendedores possam registrar vendas em segundos (PDV) e gerentes tenham visão total do negócio através de dashboards automatizados.
+
+Diferente de sistemas genéricos, este projeto foca na agilidade do varejo de moda, controlando estoque, calculando comissões e gerando relatórios de desempenho sem complexidade.
+
+### 🎯 O que o sistema resolve?
+- **Fim dos erros de cálculo:** O carrinho soma e dá baixa no estoque automaticamente.
+- **Controle de Caixa:** Relatórios mostram exatamente quanto entrou por Pix, Dinheiro ou Cartão.
+- **Segurança:** Vendedores vendem, mas apenas Administradores podem excluir produtos ou alterar estoques.
 
 ---
 
